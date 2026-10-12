@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- REA 复刻工场 · sitemap
-     当前线上地址：https://tingaidehua.github.io/tingai/
+     当前线上地址：https://tingaidehua.github.io/rea/
      tingai.is-a.dev 的 DNS 已生效（返回 302），但仓库 Pages 尚未配置自定义域名，
      按本次任务要求不碰部署配置，故 canonical 仍指向实际可访问的 github.io 地址。
      is-a.dev PR：https://github.com/is-a-dev/register/pull/56167 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/sitemap/0.9">
   <url>
-    <loc>https://tingaidehua.github.io/tingai/</loc>
+    <loc>https://tingaidehua.github.io/rea/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
