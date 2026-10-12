@@ -25,11 +25,11 @@
 
 # Website Preview
 
-https://tingaidehua.github.io/tingai/
+https://tingaidehua.github.io/rea/
 
 # Website Purpose
 
-REA 复刻工场 (tingai = 听AI的话): a community directory/catalog site for clean-room open-source reimplementations of commercial software (video editors, design tools, office apps, social apps...). 48 targets in 8 categories, each marked as: has open-source reimplementation / in progress / open for claiming. Search + filters + SEO + community submission/collaboration entries. Non-commercial open-source community project hosted on GitHub Pages.
+REA 复刻工场 (rea = Reverse Engineer Anything；tingai = 听AI的话): a community directory/catalog site for clean-room open-source reimplementations of commercial software (video editors, design tools, office apps, social apps...). 50 targets in 7 categories, each marked as: has open-source reimplementation / in progress / open for claiming. Search + filters + SEO + community submission/collaboration entries. Non-commercial open-source community project hosted on GitHub Pages.
 ```
 
 ## 审核通过后的下一步（给用户备忘）

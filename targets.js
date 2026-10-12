@@ -6,7 +6,7 @@
  * 红线：link 必须是真实存在的开源功能性复现仓库（已逐个验 200），没有就留空
  */
 const SI = "https://cdn.jsdelivr.net/npm/simple-icons/icons/";
-const ISSUE = "https://github.com/tingaidehua/tingai/issues/new";
+const ISSUE = "https://github.com/tingaidehua/rea/issues/new";
 
 const TARGETS = [
 /* ============ 影音直播 ============ */
