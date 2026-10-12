@@ -80,13 +80,15 @@ a{color:inherit;text-decoration:none}
 }
 .wall-item{display:flex;flex-direction:column;align-items:center;gap:8px;width:86px}
 .tile{
+  --is:40px;
   width:72px;height:72px;border-radius:22px;background:var(--tc,#999);
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;flex:none;
   box-shadow:0 8px 20px rgba(51,51,59,.14);
   transition:transform .18s;
 }
 .wall-item:hover .tile{transform:translateY(-6px) rotate(-3deg) scale(1.06)}
-.tile img{width:58%;height:58%;filter:brightness(0) invert(1)}
+.tile img{width:var(--is);height:var(--is);object-fit:contain;display:block;flex:none;position:relative;background:var(--tc,#999);filter:brightness(0) invert(1)}
+.tile .letter-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .tile .letter{color:#fff;font-weight:900;font-size:30px;line-height:1}
 .wall-item span{font-size:12.5px;color:var(--muted);font-weight:600}
 
@@ -140,7 +142,7 @@ a{color:inherit;text-decoration:none}
 }
 .tcard:hover{transform:translateY(-5px);border-color:#FFD9D9}
 .tcard-top{display:flex;align-items:center;gap:14px}
-.tcard .tile{width:58px;height:58px;border-radius:18px;flex:none}
+.tcard .tile{width:58px;height:58px;border-radius:18px;--is:32px}
 .tcard .tile .letter{font-size:24px}
 .tinfo h4{font-size:16.5px;font-weight:800;line-height:1.4}
 .tinfo .vendor{font-size:12.5px;color:var(--muted)}
@@ -272,5 +274,5 @@ footer{background:#2B2B33;color:#D8D8E0;margin-top:84px;border-radius:48px 48px 
   .hero-stats{gap:28px}
   .icon-wall{gap:12px}
   .wall-item{width:72px}
-  .tile{width:60px;height:60px;border-radius:18px}
+  .tile{width:60px;height:60px;border-radius:18px;--is:34px}
 }

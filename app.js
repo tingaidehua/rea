@@ -3,12 +3,11 @@
    加新目标只改 targets.js，本文件不动。 */
 
 function tileHTML(icon, label) {
-  if (icon.si) {
-    const src = SI + icon.si + ".svg";
-    const fb = "this.outerHTML='<span class=\"letter\">" + label.slice(0,1) + "</span>'";
-    return `<div class="tile" style="--tc:${icon.c}"><img src="${src}" alt="${label}" loading="lazy" onerror="${fb}"></div>`;
-  }
-  return `<div class="tile" style="--tc:${icon.c}"><span class="letter">${icon.t}</span></div>`;
+  const ch = (icon.t || label || "?").slice(0, 1);
+  const inner = icon.si
+    ? `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img src="${SI}${icon.si}.svg" alt="" loading="lazy" onerror="this.remove()">`
+    : `<span class="letter">${icon.t}</span>`;
+  return `<div class="tile" style="--tc:${icon.c}">${inner}</div>`;
 }
 
 function cardHTML(t, rank) {
