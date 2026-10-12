@@ -5,7 +5,7 @@
 function tileHTML(icon, label) {
   const ch = (icon.t || label || "?").slice(0, 1);
   const inner = icon.si
-    ? `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img src="${SI}${icon.si}.svg" alt="" loading="lazy" onerror="this.remove()">`
+    ? `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img src="${SI}${icon.si}.svg" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()">`
     : `<span class="letter">${icon.t}</span>`;
   return `<div class="tile" style="--tc:${icon.c}">${inner}</div>`;
 }

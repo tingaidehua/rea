@@ -82,12 +82,12 @@ a{color:inherit;text-decoration:none}
 .tile{
   --is:40px;
   width:72px;height:72px;border-radius:22px;background:var(--tc,#999);
-  display:flex;align-items:center;justify-content:center;flex:none;
+  display:flex;align-items:center;justify-content:center;flex:none;position:relative;
   box-shadow:0 8px 20px rgba(51,51,59,.14);
   transition:transform .18s;
 }
 .wall-item:hover .tile{transform:translateY(-6px) rotate(-3deg) scale(1.06)}
-.tile img{width:var(--is);height:var(--is);object-fit:contain;display:block;flex:none;position:relative;background:var(--tc,#999);filter:brightness(0) invert(1)}
+.tile img{width:var(--is);height:var(--is);object-fit:contain;display:block;flex:none;position:relative;filter:brightness(0) invert(1)}
 .tile .letter-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .tile .letter{color:#fff;font-weight:900;font-size:30px;line-height:1}
 .wall-item span{font-size:12.5px;color:var(--muted);font-weight:600}
