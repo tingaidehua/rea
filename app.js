@@ -4,9 +4,14 @@
 
 function tileHTML(icon, label) {
   const ch = (icon.t || label || "?").slice(0, 1);
-  const inner = icon.si
-    ? `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img src="${SI}${icon.si}.svg" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()">`
-    : `<span class="letter">${icon.t}</span>`;
+  let inner;
+  if (icon.img) {
+    inner = `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img class="real" src="${icon.img}" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()">`;
+  } else if (icon.si) {
+    inner = `<span class="letter letter-bg" aria-hidden="true">${ch}</span><img src="${SI}${icon.si}.svg" alt="" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()">`;
+  } else {
+    inner = `<span class="letter">${icon.t}</span>`;
+  }
   return `<div class="tile" style="--tc:${icon.c}">${inner}</div>`;
 }
 
