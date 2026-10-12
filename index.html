@@ -4,392 +4,152 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REA 复刻工场 · 开源复刻商业软件的社区目标目录站</title>
-<meta name="description" content="REA 复刻工场：全球第一个 AI 协作复刻商业软件的社区。48 个复刻目标目录导航（剪映、Photoshop、微信、Notion……），只复刻功能语义、clean-room 重写，已有 25 个经逐个核实的开源功能性复现。">
-<meta name="keywords" content="AI复刻,开源平替,clean-room,复刻商业软件,剪映平替,CapCut开源替代,Photoshop开源替代,Notion平替,微信替代,REA,逆向工程,开源协作,复刻工场">
-<meta name="author" content="REA 复刻工场社区">
-<link rel="canonical" href="https://tingai.is-a.dev/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="REA 复刻工场">
+<meta name="description" content="REA 复刻工场：全球第一个 AI 协作复刻商业软件的社区目录站。50 个复刻目标（剪映、微信、抖音、YouTube、Photoshop…），只做 clean-room 功能性复刻：不用原软件一行代码，不碰商标与视觉资产。提交目标、认领、组队，一起复刻。">
+<meta name="keywords" content="REA,复刻工场,开源复刻,功能性复刻,clean-room,剪映复刻,微信复刻,抖音复刻,ArtCraft,reverse engineer anything,软件目录,导航站">
 <meta property="og:title" content="REA 复刻工场 · 开源复刻商业软件的社区目标目录站">
-<meta property="og:description" content="48 个复刻目标目录导航：只复刻功能语义，clean-room 重写。25 个经核实的开源功能性复现，24 个待认领，等你来开干。">
-<meta property="og:url" content="https://tingai.is-a.dev/">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="REA 复刻工场 · 开源复刻商业软件的社区目标目录站">
-<meta name="twitter:description" content="48 个复刻目标目录导航：只复刻功能语义，clean-room 重写。25 个经核实的开源功能性复现，24 个待认领。">
+<meta property="og:description" content="50 个复刻目标，7 大分类。只做 clean-room 功能性复刻：不用原软件一行代码。提交目标、认领、组队，一起把商业软件复刻成开源。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tingaidehua.github.io/tingai/">
+<link rel="canonical" href="https://tingaidehua.github.io/tingai/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%23FF6B6B'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'>复</text></svg>">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "REA 复刻工场",
-      "alternateName": "REA Clone Factory",
-      "url": "https://tingai.is-a.dev/",
-      "inLanguage": "zh-CN",
-      "description": "全球第一个 AI 协作复刻商业软件的社区：48 个复刻目标目录导航，只复刻功能语义，clean-room 重写。",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tingai.is-a.dev/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "ItemList",
-      "name": "已核实的开源功能性复现",
-      "description": "以下仓库链接均经人工逐个打开核实（2026-10-12），均为 clean-room 或公开重写的开源实现，不含破解与盗版。",
-      "numberOfItems": 25,
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "OpenCut-app/OpenCut（开源复现：剪映 / CapCut）", "url": "https://github.com/OpenCut-app/OpenCut"},
-        {"@type": "ListItem", "position": 2, "name": "storytold/filmcraft（开源复现：Adobe Premiere Pro）", "url": "https://github.com/storytold/filmcraft"},
-        {"@type": "ListItem", "position": 3, "name": "storytold/effectcraft（开源复现：Adobe After Effects）", "url": "https://github.com/storytold/effectcraft"},
-        {"@type": "ListItem", "position": 4, "name": "obsproject/obs-studio（开源复现：XSplit / Streamlabs 商业直播软件）", "url": "https://github.com/obsproject/obs-studio"},
-        {"@type": "ListItem", "position": 5, "name": "storytold/photocraft（开源复现：Adobe Photoshop）", "url": "https://github.com/storytold/photocraft"},
-        {"@type": "ListItem", "position": 6, "name": "GNOME/gimp（开源复现：Adobe Photoshop）", "url": "https://github.com/GNOME/gimp"},
-        {"@type": "ListItem", "position": 7, "name": "storytold/vectorcraft（开源复现：Adobe Illustrator）", "url": "https://github.com/storytold/vectorcraft"},
-        {"@type": "ListItem", "position": 8, "name": "storytold/lightcraft（开源复现：Adobe Lightroom）", "url": "https://github.com/storytold/lightcraft"},
-        {"@type": "ListItem", "position": 9, "name": "storytold/designcraft（开源复现：Adobe InDesign）", "url": "https://github.com/storytold/designcraft"},
-        {"@type": "ListItem", "position": 10, "name": "storytold/pdfcraft（开源复现：Adobe Acrobat）", "url": "https://github.com/storytold/pdfcraft"},
-        {"@type": "ListItem", "position": 11, "name": "penpot/penpot（开源复现：Figma）", "url": "https://github.com/penpot/penpot"},
-        {"@type": "ListItem", "position": 12, "name": "FreeCAD/FreeCAD（开源复现：AutoCAD）", "url": "https://github.com/FreeCAD/FreeCAD"},
-        {"@type": "ListItem", "position": 13, "name": "blender/blender（开源复现：3ds Max / Maya）", "url": "https://github.com/blender/blender"},
-        {"@type": "ListItem", "position": 14, "name": "KDE/krita（开源复现：Photoshop / Procreate 绘画侧）", "url": "https://github.com/KDE/krita"},
-        {"@type": "ListItem", "position": 15, "name": "LibreOffice/core（开源复现：Microsoft Office）", "url": "https://github.com/LibreOffice/core"},
-        {"@type": "ListItem", "position": 16, "name": "AppFlowy-IO/AppFlowy（开源复现：Notion）", "url": "https://github.com/AppFlowy-IO/AppFlowy"},
-        {"@type": "ListItem", "position": 17, "name": "laurent22/joplin（开源复现：印象笔记 / Evernote）", "url": "https://github.com/laurent22/joplin"},
-        {"@type": "ListItem", "position": 18, "name": "jgraph/drawio（开源复现：Visio / ProcessOn）", "url": "https://github.com/jgraph/drawio"},
-        {"@type": "ListItem", "position": 19, "name": "rustdesk/rustdesk（开源复现：TeamViewer / 向日葵）", "url": "https://github.com/rustdesk/rustdesk"},
-        {"@type": "ListItem", "position": 20, "name": "OpenTTD/OpenTTD（开源复现：Transport Tycoon Deluxe）", "url": "https://github.com/OpenTTD/OpenTTD"},
-        {"@type": "ListItem", "position": 21, "name": "OpenRA/OpenRA（开源复现：命令与征服系列）", "url": "https://github.com/OpenRA/OpenRA"},
-        {"@type": "ListItem", "position": 22, "name": "OpenMW/openmw（开源复现：上古卷轴3：晨风）", "url": "https://github.com/OpenMW/openmw"},
-        {"@type": "ListItem", "position": 23, "name": "FreeTubeApp/FreeTube（开源复现：YouTube 桌面客户端）", "url": "https://github.com/FreeTubeApp/FreeTube"},
-        {"@type": "ListItem", "position": 24, "name": "TeamNewPipe/NewPipe（开源复现：YouTube 安卓客户端）", "url": "https://github.com/TeamNewPipe/NewPipe"},
-        {"@type": "ListItem", "position": 25, "name": "jellyfin/jellyfin（开源复现：Plex / Emby）", "url": "https://github.com/jellyfin/jellyfin"}
-      ]
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"WebSite","name":"REA 复刻工场",
+ "url":"https://tingaidehua.github.io/tingai/",
+ "description":"AI 协作复刻商业软件的社区目录站：50 个复刻目标，clean-room 功能性复刻。",
+ "potentialAction":{"@type":"SearchAction","target":"https://tingaidehua.github.io/tingai/?q={query}","query-input":"required name=query"}}
 </script>
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark">⌁</span>
-      <span class="brand-text">REA 复刻工场</span>
-      <span class="brand-sub">Reverse Engineer Anything · Community</span>
-    </a>
-    <nav class="nav" id="mainNav" aria-label="主导航">
-      <a href="#manifesto">理念</a>
-      <a href="#tools">工具</a>
-      <a href="#registry">复刻目标</a>
-      <a href="#submit">投稿</a>
-      <a href="#sharing">共享机制</a>
-      <a href="#method">方法论</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
-  </div>
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-badge">复</span> REA 复刻工场</a>
+  <nav class="nav-links">
+    <a href="#hot">热门</a><a href="#cats">分类</a><a href="#flow">协作</a><a href="#trend">趋势</a><a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn-pill" href="https://github.com/tingaidehua/tingai/issues/new" target="_blank" rel="noopener">＋ 提交目标</a>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="wrap hero-inner">
-      <div class="hero-badge">全球第一个 · AI 协作复刻商业软件的社区</div>
-      <h1 class="hero-title">把商业软件的<br><span class="glow">功能语义</span>，重写一遍</h1>
-      <p class="hero-desc">REA 复刻工场是一个开源社区：用 AI 把商业软件<strong>能做什么、交互流程是什么</strong>系统性地重实现一遍，沉淀为可复用的算法资产与工程流程。只复刻功能语义，<strong>clean-room 重写</strong>——不碰原软件的源码与资产。</p>
-      <div class="hero-cta">
-        <a href="#registry" class="btn btn-primary">浏览 48 个复刻目标 →</a>
-        <a href="#submit" class="btn btn-ghost">提交新目标</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">48</span><span class="stat-label">复刻目标总数</span></div>
-        <div class="stat"><span class="stat-num">25</span><span class="stat-label">已核实开源复现</span></div>
-        <div class="stat"><span class="stat-num">S0–S7</span><span class="stat-label">八阶段复刻 SOP</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">中心服务器</span></div>
-      </div>
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-badge">🌱 全球第一个 · AI 协作复刻商业软件的社区</div>
+  <h1>把商业软件，<span class="hl">一个一个复刻成开源</span></h1>
+  <p class="hero-sub">只复刻<strong>功能语义</strong>，clean-room 重写 —— 绝不用原软件一行代码，不碰商标与视觉资产。<br>逆向只是为了理解功能，代码全部自己写。</p>
+
+  <div class="icon-wall" id="iconWall" aria-label="热门复刻目标图标墙"></div>
+
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="搜一下：微信 / 剪映 / Notion / ……" autocomplete="off">
+    <div class="search-hint" id="searchHint"></div>
+  </div>
+
+  <div class="hero-stats">
+    <div><b>50</b><span>复刻目标</span></div>
+    <div><b>19</b><span>已有开源复现</span></div>
+    <div><b>7</b><span>软件分类</span></div>
+    <div><b>114k</b><span>REA Stars</span></div>
+  </div>
+</section>
+
+<!-- 三红线 -->
+<section class="rules">
+  <div class="rule-card"><span class="rule-ico" style="--rc:#FF6B6B">①</span><b>只复刻功能语义</b><p>学它"能干什么"，不拿它"怎么写"</p></div>
+  <div class="rule-card"><span class="rule-ico" style="--rc:#4D96FF">②</span><b>绝不用原软件源码</b><p>反编译产物不进仓库，代码全部重写</p></div>
+  <div class="rule-card"><span class="rule-ico" style="--rc:#4ECDC4">③</span><b>不碰商标与视觉资产</b><p>图标 / 字体 / 滤镜预设须原创或合法授权</p></div>
+</section>
+
+<!-- ② 热门目标 -->
+<section class="section" id="hot">
+  <div class="sec-head">
+    <h2>🔥 热门目标</h2>
+    <p>全网呼声最高、最值得组队开干的 12 个，按热度排序</p>
+  </div>
+  <div class="cards" id="hotGrid"></div>
+</section>
+
+<!-- ③ 分类目录 -->
+<section class="section alt" id="cats">
+  <div class="sec-head">
+    <h2>🗂️ 分类目录</h2>
+    <p>按软件类型浏览全部 50 个目标 · 绿色=已有复现可直接参与，黄色=进行中，灰色=待认领等你开坑</p>
+  </div>
+  <div id="catSections"></div>
+</section>
+
+<!-- ④ 运营协作 -->
+<section class="section" id="flow">
+  <div class="sec-head">
+    <h2>🤝 怎么一起干</h2>
+    <p>四步上车。不用中心服务器：静态站 + GitHub 协作，token 和算力各跑各的 key</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="step-n" style="--sc:#FF6B6B">1</span><b>提交目标</b><p>发现想复刻的软件？提个 issue，写清功能清单</p><a class="mini-link" href="https://github.com/tingaidehua/tingai/issues/new" target="_blank" rel="noopener">去提交 →</a></div>
+    <div class="step"><span class="step-n" style="--sc:#FFB26B">2</span><b>认领</b><p>挑一个"待认领"，在 issue 下报名，开干</p></div>
+    <div class="step"><span class="step-n" style="--sc:#4D96FF">3</span><b>组队</b><p>拉人分模块：UI / 算法 / 协议 / 测试，各认一块</p></div>
+    <div class="step"><span class="step-n" style="--sc:#4ECDC4">4</span><b>交付</b><p>仓库公开 + parity 清单打勾，挂上"已有复现"</p></div>
+  </div>
+
+  <div class="rea-card">
+    <div class="rea-head"><span class="rea-badge">核心工具</span><h3>REA · Reverse Engineer Anything</h3></div>
+    <p class="rea-desc">给 coding agent 的逆向工具包：MCP + 命令行，反编译 native / Electron / App / 网站，<strong>只用来理解功能语义，不提取私有实现</strong>。分析全程在你本机跑，二进制不出内网。</p>
+    <div class="rea-meta">
+      <span>⭐ 114k stars（一周登顶 GitHub Trending）</span>
+      <span>📦 MIT 协议</span>
+      <span>🔌 接入 Claude Code / Cursor / Codex</span>
     </div>
-  </section>
+    <a class="btn-pill" href="https://github.com/morluto/rea" target="_blank" rel="noopener">看 REA 仓库 →</a>
+  </div>
 
-  <!-- ============ MANIFESTO ============ -->
-  <section class="section" id="manifesto">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">MANIFESTO</span>
-        <h2>理念：三条红线，违反任何一条即叫停</h2>
-        <p class="section-sub">逆向是为功能性复刻服务，不是目的。功能思想不受著作权保护——我们复刻的是"它能做什么"，不是"它怎么写"。</p>
-      </div>
-      <div class="cards-3">
-        <div class="card redline reveal">
-          <div class="redline-num">01</div>
-          <h3>只做功能语义复刻</h3>
-          <p>复刻的是"它能做什么、交互流程是什么"：功能清单、交互步骤、输入输出边界。从零重写实现，不照抄任何现有实现。</p>
-        </div>
-        <div class="card redline reveal">
-          <div class="redline-num">02</div>
-          <h3>绝不用原软件源码 / 反编译产物</h3>
-          <p>反编译只用于理解功能边界与模块切分，绝不复制实现细节。注意：把原代码喂给 AI 改写后再用，<strong>不改变著作权链条</strong>，同样禁止。</p>
-        </div>
-        <div class="card redline reveal">
-          <div class="redline-num">03</div>
-          <h3>不照搬商标与视觉资产</h3>
-          <p>商标、logo、品牌名、图标、字体、滤镜预设、贴纸包、宣传文案——全部原创或合法授权，并登记进 ATTRIBUTION.md。</p>
-        </div>
-      </div>
-      <div class="manifesto-note reveal">
-        <span class="mono">逆向 → 功能清单 → clean-room 重写</span>
-        <span class="sep">·</span>
-        <span>逆向只是前置工具，不是目的；交付物永远是自己写的代码。</span>
-      </div>
-    </div>
-  </section>
+  <div class="share-note">
+    <b>💡 为什么不用中心服务器？</b>
+    <p>本站是纯静态站（GitHub Pages 托管，零服务器）。协作靠公开仓库 + issue；每个人的 token / 算力自己出、跑自己的 key；中心只共享 prompts、SOP、评测集和 parity 清单。<strong>不搞中央 key 池</strong> —— 那是安全和合规的坑。</p>
+  </div>
+</section>
 
-  <!-- ============ TOOLS ============ -->
-  <section class="section alt" id="tools">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">TOOLCHAIN</span>
-        <h2>工具区：站在两个巨人的肩膀上</h2>
-        <p class="section-sub">一个负责"看懂"，一个负责"证明可行"。</p>
-      </div>
-      <div class="cards-2">
-        <div class="card tool-card reveal">
-          <div class="tool-top">
-            <div>
-              <h3>REA <span class="tool-en">/ morluto/rea</span></h3>
-              <div class="tool-tags"><span class="tag">MIT</span><span class="tag">MCP Server</span><span class="tag">CLI</span><span class="tag">全程本地运行</span></div>
-            </div>
-            <div class="tool-stars"><span class="big">93,344</span><span>stars / 一周</span><span class="dim">20,848 forks · GitHub Trending 连续多日第一</span></div>
-          </div>
-          <p>给 coding agent 用的<strong>逆向工具包</strong>：反编译 native / Electron / JS / .NET / APK / 网站，解释功能原理。分析全程在用户本机跑，代码不上传。</p>
-          <div class="tool-loop">
-            <span class="loop-step">① 反编译</span><span class="loop-arrow">→</span>
-            <span class="loop-step">② 追踪执行</span><span class="loop-arrow">→</span>
-            <span class="loop-step">③ 用自己的技术栈重写逻辑</span>
-          </div>
-          <p class="tool-note">关键定位：它只加速<strong>"功能语义理解"</strong>，拿不到原实现——这正是 clean-room 复刻的前置工具，也是我们三红线的天然盟友。</p>
-          <a class="btn btn-small" href="https://github.com/morluto/rea" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
-        </div>
-        <div class="card tool-card reveal">
-          <div class="tool-top">
-            <div>
-              <h3>ArtCraft <span class="tool-en">/ storytold</span></h3>
-              <div class="tool-tags"><span class="tag">MIT / Apache-2.0</span><span class="tag">Claude Opus 5.5</span><span class="tag">Rust</span><span class="tag">clean-room</span></div>
-            </div>
-            <div class="tool-stars"><span class="big">~79k</span><span>stars 合计</span><span class="dim">20,600 forks · 标杆案例</span></div>
-          </div>
-          <p>Brandon Thomas 用 Claude Opus 5.5 + Rust，两天/一周级 clean-room 重写 <strong>Adobe 全家桶 7 个应用</strong>：PhotoCraft（PS，44k stars）/ VectorCraft（Ai）/ FilmCraft（Pr）/ LightCraft（Lr）/ EffectCraft（Ae）/ DesignCraft（Id）/ PdfCraft（Acrobat）。号称 clean-room：只读公开文档、只观察行为，从零重写。</p>
-          <p class="tool-note">诚实说明：目前仍是<strong>早期 alpha</strong>，离"完美复刻"很远——但它证明了路线可行。正在扩展 WordCraft / DeckCraft / GridCraft / CADCraft / SoundCraft。</p>
-          <a class="btn btn-small" href="https://github.com/storytold" target="_blank" rel="noopener">GitHub 组织 ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ⑤ 市场趋势 -->
+<section class="section alt" id="trend">
+  <div class="sec-head">
+    <h2>📈 复刻时代来了</h2>
+    <p>这不是空想，是正在发生的事</p>
+  </div>
+  <div class="trend-grid">
+    <div class="trend-card"><b class="trend-n" style="--tc:#FF6B6B">114k</b><p><strong>REA</strong> 一周 11.4 万 stars，连续多日 GitHub Trending 第一。给 agent 用的逆向工具包，说明"理解功能"这件事已经被工具化了。</p></div>
+    <div class="trend-card"><b class="trend-n" style="--tc:#4D96FF">79k</b><p><strong>ArtCraft</strong> 用 Claude Opus 5.5 + Rust，clean-room 重写 Adobe 全家桶 7 个应用（PhotoCraft 44k stars），合计约 7.9 万 stars —— 但自称还是早期 alpha，缺人缺测试。</p></div>
+    <div class="trend-card"><b class="trend-n" style="--tc:#4ECDC4">19</b><p>本站目录里 <strong>19 个目标已有可用的开源功能性复现</strong>（OpenCut、Penpot、AppFlowy、RustDesk…），可以直接去参与贡献，不用从零起。</p></div>
+    <div class="trend-card"><b class="trend-n" style="--tc:#9B5DE5">30</b><p><strong>30 个目标待认领</strong>：微信、抖音、小红书、飞书……呼声最高、难度最大的硬骨头，等人组队。</p></div>
+  </div>
+</section>
 
-  <!-- ============ REGISTRY · 目录导航 ============ -->
-  <section class="section" id="registry">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">DIRECTORY</span>
-        <h2>复刻目标目录：搜一个，认领一个，开干</h2>
-        <p class="section-sub">48 个目标，8 大分类。绿色=已有经核实的开源复现（可直接参与上游），黄色=进行中，灰色=待认领。每个目标一个公开仓库，一份 parity.md 做进度真相源。</p>
-      </div>
-
-      <div class="dir-toolbar reveal" id="dirToolbar">
-        <div class="search-wrap">
-          <span class="search-icon" aria-hidden="true">🔍</span>
-          <input type="search" id="searchInput" placeholder="搜索软件名 / 原厂商 / 分类，如：剪映、Adobe、办公…" aria-label="搜索复刻目标" autocomplete="off">
-        </div>
-        <div class="filter-bar dir-filters" id="statusFilter" role="group" aria-label="按状态筛选">
-          <button class="filter-btn active" data-status="all">全部</button>
-          <button class="filter-btn" data-status="shipped">已有开源复现</button>
-          <button class="filter-btn" data-status="active">进行中</button>
-          <button class="filter-btn" data-status="wanted">待认领</button>
-        </div>
-      </div>
-
-      <nav class="cat-nav reveal" id="catNav" aria-label="分类导航"><!-- JS 渲染 --></nav>
-      <p class="dir-count" id="dirCount" aria-live="polite"></p>
-      <div id="dirContent"><!-- JS 渲染：分组 / 扁平两种形态 --></div>
-    </div>
-  </section>
-
-  <!-- ============ SUBMIT · 社区投稿 ============ -->
-  <section class="section alt" id="submit">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">CONTRIBUTE</span>
-        <h2>社区投稿：目录是大家一起攒出来的</h2>
-        <p class="section-sub">发现值得复刻的商业软件，或者想找人一起干——这里是入口。</p>
-      </div>
-      <div class="cards-2">
-        <div class="card reveal">
-          <h3>📮 提交新目标</h3>
-          <p>在目录里没找到你想复刻的软件？提交一个新目标提案。提案模板会要求你填：<strong>软件名 / 原厂商 / 建议分类 / 热度依据 / 难度自评 / 三红线承诺</strong>。管理员核实后进入目录，初始状态为"待认领"。</p>
-          <p class="dim">⚠️ 只收录 clean-room / 公开重写的开源实现方向，不收录破解、盗版、去广告修改版提案。</p>
-          <div style="margin-top:18px">
-            <a class="btn btn-primary" href="#" onclick="return false;" title="占位：GitHub org 待创建">提交新目标（issue 模板 · 待创建）</a>
-          </div>
-          <p class="dim" style="margin-top:12px">提案通道为 GitHub issue 模板（占位：org 建好后启用）。模板会强制要求声明遵守 clean-room 三红线。</p>
-        </div>
-        <div class="card reveal">
-          <h3>🤝 找人合作</h3>
-          <p><strong>想认领：</strong>在上方目录任意一张灰色"待认领"卡片上点「认领 / 合作」，留下你的 GitHub ID 与计划，仓库建好后你就是 maintainer。</p>
-          <p><strong>想组队：</strong>绿色"已有开源复现"的卡片，直接去上游仓库提 issue / PR 参与贡献——parity 测试、文档汉化都是很好的第一贡献。</p>
-          <p><strong>想围观：</strong>黄色"进行中"的目标（如本站 Case 001 美图秀秀），仓库公开后欢迎 review 与测试。</p>
-          <p class="dim">认领即承诺：按 clean-room 三红线开工，parity.md 定期更新，进度对所有人可见。不搞中央 key 池，算力各跑各的 key。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SHARING ============ -->
-  <section class="section" id="sharing">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">SHARING</span>
-        <h2>共享机制：零服务器，各跑各的 key</h2>
-        <p class="section-sub">一个人的 token 和算力是有限的——所以我们不建中心，只建广场。</p>
-      </div>
-      <div class="share-grid">
-        <div class="card share-card reveal">
-          <h3>🖥 零服务器</h3>
-          <p>本站是纯静态站，托管在 GitHub Pages。没有后端、没有数据库、没有运维账单——<strong>本站自己就是"去中心化"这个理念的第一个实例</strong>。</p>
-        </div>
-        <div class="card share-card reveal">
-          <h3>🗂 协作面 = GitHub</h3>
-          <p>协作靠 GitHub org + 每个软件一个公开仓库。parity.md 是进度真相源，PR 是协作语言，issue 是认领通道。不需要任何自建平台。</p>
-        </div>
-        <div class="card share-card reveal">
-          <h3>📦 中心只共享四样东西</h3>
-          <p>prompts 模板、复刻总纲 SOP、评测集、parity 清单与算法注册表。沉淀的是<strong>可复用的资产</strong>，不是算力。</p>
-        </div>
-        <div class="card share-card warn reveal">
-          <h3>⚠️ 不搞中央 key 池</h3>
-          <p>token / 算力<strong>去中心化、各跑各的 key</strong>。中央 key 池是安全和合规的坑：泄露面、滥用、账单纠纷，碰一条就死。红线，不讨论。</p>
-        </div>
-      </div>
-      <div class="share-diagram reveal">
-        <div class="diagram-row">
-          <span class="diagram-node">你（本地 key + 算力）</span>
-          <span class="diagram-arrow">⇄</span>
-          <span class="diagram-node center">GitHub org（公开仓库群）</span>
-          <span class="diagram-arrow">⇄</span>
-          <span class="diagram-node">他（本地 key + 算力）</span>
-        </div>
-        <div class="diagram-caption">中心流转的只有代码、文档与评测集 —— 没有 key，没有算力，没有服务器</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ METHOD ============ -->
-  <section class="section alt" id="method">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">METHODOLOGY</span>
-        <h2>方法论：复刻总纲 SOP（八阶段）</h2>
-        <p class="section-sub">任何一个商业软件的复刻立项，都按此 SOP 从 S0 走到 S7。美图秀秀 Case 001 是第一个跑通全流程的实例。</p>
-      </div>
-      <div class="sop-grid" id="sopGrid"><!-- JS 渲染 --></div>
-      <div class="sop-download reveal">
-        <a class="btn btn-ghost" href="#" onclick="return false;" title="占位">下载总纲 SOP 全文（PDF · 待生成）</a>
-        <span class="dim">v2.0 · 每个 Case 结束时必须提 SOP 修订 PR，SOP 是活文档</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-kicker">FAQ</span>
-        <h2>常见问题</h2>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item reveal" open>
-          <summary>这违法吗？</summary>
-          <div class="faq-body">
-            <p><strong>功能思想不受著作权保护，是各国通行的原则。</strong>著作权保护的是表达（代码、界面、文案、素材），不保护功能创意与交互流程。clean-room（只观察公开行为、从零重写）是行业成熟实践：LibreOffice 对 Microsoft Office、GIMP 对 Photoshop 都是先例。</p>
-            <p>真正的风险点有两处：<strong>① 反编译时绕过 DRM / 破解付费与会员校验；② 照搬图标、字体、滤镜预设等视觉资产。</strong>所以三红线是强制的，每个 Case 上线前做一次正式法务 review。</p>
-            <p class="dim">本站内容不构成法律意见。</p>
-          </div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>卡片上的"待认领"和"待核实"是什么意思？</summary>
-          <div class="faq-body">
-            <p><strong>"待认领"</strong>：该目标尚无对应的开源功能性复现，欢迎认领开干——点卡片上的「认领 / 合作」即可。</p>
-            <p><strong>"待核实"备注</strong>（如 Navicat / Typora 卡片上的小字）：社区推测可能存在对应开源项目，但本轮调研未逐个打开核实，<strong>故不给链接</strong>。核实通过后才会上链。我们绝不凭推测编造仓库链接。</p>
-          </div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>如何参与？</summary>
-          <div class="faq-body">
-            <p>三步：① 在上面的复刻目标目录里选一个"待认领"的，点「认领 / 合作」（GitHub issue 占位）；② 按卡片里的《10 分钟上手》把仓库立起来；③ 按 SOP 从 S0 走到 S7。parity.md 是你进度的真相源，定期更新，所有人看得见。</p>
-          </div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>需要什么技能？</summary>
-          <div class="faq-body">
-            <p>会用 AI coding 工具、能按 SOP 跑流程，就可以认领大多数目标。深水区（音视频编解码、图形学、编译器）欢迎专家认领对应模块——parity 清单拆到任务卡一级，专家只啃硬骨头也行。</p>
-          </div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>复刻和"逆向工程"是什么关系？</summary>
-          <div class="faq-body">
-            <p>逆向是为功能性复刻服务的前置工具，不是目的。我们用 REA 这类工具搞清"它有什么功能、模块怎么切分"，然后 clean-room 重写。交付物永远是自己写的代码。</p>
-          </div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>为什么不用中心服务器 / 中央 key 池？</summary>
-          <div class="faq-body">
-            <p>中央 key 池集中了泄露面、滥用风险和账单纠纷，是安全和合规的坑。我们的答案：静态站 + GitHub Pages（零服务器），协作靠 GitHub org（零自建平台），算力各跑各的 key，中心只共享 prompts、SOP、评测集与 parity 清单。</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="sec-head"><h2>❓ 常见问题</h2></div>
+  <div class="faq-list">
+    <details open><summary>这违法吗？会被告吗？</summary><p>功能思想不受著作权保护是各国通行原则，LibreOffice、GIMP、Blender 都是这么活下来的。本站只收录 <strong>clean-room 功能性复刻</strong>：不用原软件源码、不照搬商标与视觉资产。真正的风险在两处 —— 反编译绕过 DRM（反规避条款）、照搬资产 —— 所以三红线是强制的，违反即下架。以上不构成法律意见。</p></details>
+    <details><summary>逆向和复刻是什么关系？</summary><p>逆向是手段，复刻是目的。用 REA 这类工具把"它能干什么"拆成清单，然后代码全部自己重写。绝不把反编译产物放进仓库。</p></details>
+    <details><summary>我需要什么技能才能参与？</summary><p>新手从低难度目标起：XMind、Typora、Snipaste、Everything 这类语义清晰的；有经验的直接进 ArtCraft 全家桶做 parity 测试，或认领微信/抖音这类硬骨头先画"功能语义地图"。</p></details>
+    <details><summary>token 和算力怎么解决？</summary><p>去中心化：各跑各的 key。社区共享的是 prompts、SOP、评测集和 parity 清单，不共享 key。</p></details>
+    <details><summary>我是权利人，想下架某个目标怎么办？</summary><p>发邮件到页面底部的联系方式，说明权利归属，我们核实后 48 小时内下架相关卡片。</p></details>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-col">
-      <div class="brand"><span class="brand-mark">⌁</span><span class="brand-text">REA 复刻工场</span></div>
-      <p class="dim">全球第一个 AI 协作复刻商业软件的社区。<br>只复刻功能语义，clean-room 重写。</p>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="logo-badge">复</span><b>REA 复刻工场</b><p>全球第一个 AI 协作复刻商业软件的社区目录站</p></div>
+    <div class="foot-links">
+      <a href="https://github.com/tingaidehua/tingai" target="_blank" rel="noopener">GitHub 仓库</a>
+      <a href="https://github.com/tingaidehua/tingai/issues/new" target="_blank" rel="noopener">提交目标</a>
+      <a href="https://github.com/morluto/rea" target="_blank" rel="noopener">REA 工具</a>
     </div>
-    <div class="footer-col">
-      <h4>协作</h4>
-      <a href="#" onclick="return false;" title="占位">GitHub org（待创建）</a>
-      <a href="#registry">复刻目标目录</a>
-      <a href="#submit">提交新目标</a>
-      <a href="#method">复刻总纲 SOP</a>
-    </div>
-    <div class="footer-col">
-      <h4>工具与标杆</h4>
-      <a href="https://github.com/morluto/rea" target="_blank" rel="noopener">REA ↗</a>
-      <a href="https://github.com/storytold" target="_blank" rel="noopener">ArtCraft / storytold ↗</a>
-    </div>
-  </div>
-  <div class="wrap footer-legal">
-    <p><strong>权利人通道：</strong>如果你是某商业软件的权利人，认为本站对该软件的描述、分类或外链存在不当之处，请通过 GitHub issue（org 待创建后启用）联系我们，我们将在收到后 7 个工作日内响应，争议内容先行下架。本站只收录开源功能性复现，<strong>不收录破解、盗版与去广告修改版</strong>；各商业软件卡片仅链接其开源功能性复现，不链接任何破解/盗版资源。</p>
-    <p><strong>本站内容不构成法律意见。</strong>各复刻 Case 上线前请做正式法务 review。All trademarks belong to their respective owners.</p>
-    <p class="dim">© 2026 REA 复刻工场 · 纯静态站 · 部署于 GitHub Pages</p>
+    <p class="foot-legal">本站只收录 clean-room 功能性复刻信息，不提供任何破解、盗版或去广告修改版。权利人如需下架请联系，我们将在 48 小时内处理。以上内容不构成法律意见。</p>
+    <p class="foot-copy">© 2026 REA 复刻工场 · 用 💛 与 AI 建造</p>
   </div>
 </footer>
 
-<!-- 认领 / 合作弹窗 -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal" role="dialog" aria-modal="true">
-    <button class="modal-close" id="modalClose" aria-label="关闭">✕</button>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
+<script src="targets.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

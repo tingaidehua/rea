@@ -1,0 +1,156 @@
+/* REA 复刻工场 · 目标数据层 v3
+ * 加新目标只改这个文件：往 CATS 对应分类的 items 里加一行即可。
+ * status: done=已有开源复现 / active=进行中 / open=待认领
+ * icon: {si:'<simple-icons slug>'} 用 CDN glyph；{t:'字'} 用品牌色字母兜底
+ * heat: 1-12 为"热门目标"区，按热度排序展示
+ * 红线：link 必须是真实存在的开源功能性复现仓库（已逐个验 200），没有就留空
+ */
+const SI = "https://cdn.jsdelivr.net/npm/simple-icons/icons/";
+const ISSUE = "https://github.com/tingaidehua/tingai/issues/new";
+
+const TARGETS = [
+/* ============ 影音直播 ============ */
+{cat:"av", name:"剪映 / CapCut", vendor:"字节跳动", status:"done", heat:3,
+ link:"https://github.com/OpenCut-app/OpenCut", linkNote:"OpenCut · 93.7k stars · MIT · 自称开源 CapCut",
+ icon:{t:"剪", c:"#111111"}, blurb:"多轨道剪辑 + AI 字幕/抠像，移动端性能是硬骨头"},
+{cat:"av", name:"抖音 / TikTok", vendor:"字节跳动", status:"open", heat:2,
+ link:"", icon:{si:"tiktok", c:"#010101"}, blurb:"推荐算法是全球开发者最想看懂的黑盒"},
+{cat:"av", name:"YouTube", vendor:"Google", status:"done", heat:4,
+ link:"https://github.com/FreeTubeApp/FreeTube", linkNote:"FreeTube 桌面端 · AGPL-3.0 / NewPipe 安卓端",
+ icon:{si:"youtube", c:"#FF0000"}, blurb:"客户端可复刻，推荐算法与内容生态不可复刻"},
+{cat:"av", name:"Adobe Premiere Pro", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/filmcraft", linkNote:"FilmCraft · clean-room · Rust",
+ icon:{si:"adobe", c:"#00005B"}, blurb:"专业编解码管线 + 调色引擎"},
+{cat:"av", name:"Adobe After Effects", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/effectcraft", linkNote:"EffectCraft · clean-room · Rust",
+ icon:{si:"adobe", c:"#1F0045"}, blurb:"表达式引擎 + 粒子仿真"},
+{cat:"av", name:"哔哩哔哩", vendor:"哔哩哔哩", status:"open", heat:11,
+ link:"", icon:{si:"bilibili", c:"#00A1D6"}, blurb:"弹幕 + 社区氛围是灵魂"},
+{cat:"av", name:"Spotify", vendor:"Spotify", status:"open",
+ link:"", icon:{si:"spotify", c:"#1DB954"}, blurb:"功能语义可复刻，曲库生态不可复刻"},
+{cat:"av", name:"OBS Studio", vendor:"OBS Project", status:"done",
+ link:"https://github.com/obsproject/obs-studio", linkNote:"GPL-2.0 · 直播录屏事实标准",
+ icon:{si:"obsstudio", c:"#302E31"}, blurb:"对标 XSplit / Streamlabs，已被社区验证"},
+
+/* ============ 设计创意 ============ */
+{cat:"design", name:"Adobe Photoshop", vendor:"Adobe", status:"done", heat:5,
+ link:"https://github.com/storytold/photocraft", linkNote:"PhotoCraft · 44k stars · clean-room · Rust / GIMP 可参考",
+ icon:{si:"adobe", c:"#001E36"}, blurb:"图层/笔刷/色彩管理体系庞大"},
+{cat:"design", name:"Adobe Illustrator", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/vectorcraft", linkNote:"VectorCraft · clean-room · Rust",
+ icon:{si:"adobe", c:"#330000"}, blurb:"贝塞尔引擎 + 文字排版"},
+{cat:"design", name:"Figma", vendor:"Figma", status:"done", heat:8,
+ link:"https://github.com/penpot/penpot", linkNote:"Penpot · 60.9k stars · MPL-2.0",
+ icon:{si:"figma", c:"#F24E1E"}, blurb:"实时协同 + WASM 渲染"},
+{cat:"design", name:"Adobe Lightroom", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/lightcraft", linkNote:"LightCraft · clean-room · Rust",
+ icon:{si:"adobe", c:"#31A8FF"}, blurb:"RAW 解码管线 + 非破坏性编辑"},
+{cat:"design", name:"Adobe InDesign", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/designcraft", linkNote:"DesignCraft · clean-room · Rust",
+ icon:{si:"adobe", c:"#49021F"}, blurb:"文字排版引擎"},
+{cat:"design", name:"Adobe Acrobat", vendor:"Adobe", status:"done",
+ link:"https://github.com/storytold/pdfcraft", linkNote:"pdfcraft · clean-room · Rust（注意不是 printcraft）",
+ icon:{si:"adobe", c:"#EC1C24"}, blurb:"PDF 标准公开，以工程量为主"},
+{cat:"design", name:"美图秀秀", vendor:"美图公司", status:"active",
+ link:"", icon:{t:"美", c:"#FF6B9D"}, blurb:"本站 Case 001 · 发起人自研中（M3 阶段）"},
+{cat:"design", name:"AutoCAD", vendor:"Autodesk", status:"done",
+ link:"https://github.com/FreeCAD/FreeCAD", linkNote:"FreeCAD · 34.2k stars · LGPL-2.1",
+ icon:{si:"autodesk", c:"#0696D7"}, blurb:"几何内核 + DWG 兼容是深水区"},
+{cat:"design", name:"Blender（对标 3ds Max/Maya）", vendor:"Blender 基金会", status:"done",
+ link:"https://github.com/blender/blender", linkNote:"官方镜像 · GPL-3.0 · 基金会模式已证明可持续",
+ icon:{t:"B", c:"#EA7600"}, blurb:"建模/绑定/渲染全管线"},
+
+/* ============ 办公效率 ============ */
+{cat:"office", name:"Notion", vendor:"Notion", status:"done", heat:9,
+ link:"https://github.com/AppFlowy-IO/AppFlowy", linkNote:"AppFlowy · 77.2k stars · AGPL-3.0",
+ icon:{si:"notion", c:"#000000"}, blurb:"Block 编辑器 + 数据库 + 实时协同"},
+{cat:"office", name:"Microsoft Office", vendor:"微软", status:"done",
+ link:"https://github.com/LibreOffice/core", linkNote:"LibreOffice · TDF 官方镜像",
+ icon:{si:"microsoft", c:"#D83B01"}, blurb:"Word/Excel/PowerPoint · 格式兼容是无底洞"},
+{cat:"office", name:"WPS Office", vendor:"金山", status:"open",
+ link:"", icon:{t:"W", c:"#E60012"}, blurb:"套件层可被 LibreOffice 覆盖，中文排版特性待复刻"},
+{cat:"office", name:"飞书", vendor:"字节跳动", status:"open",
+ link:"", icon:{t:"飞", c:"#3370FF"}, blurb:"文档 + 会议 + 审批一体的协同深水区"},
+{cat:"office", name:"印象笔记 / Evernote", vendor:"Evernote", status:"done",
+ link:"https://github.com/laurent22/joplin", linkNote:"Joplin · 56.7k stars · 支持 Evernote 导入",
+ icon:{t:"印", c:"#2DBE60"}, blurb:"笔记同步 + OCR/搜索"},
+{cat:"office", name:"腾讯会议 / Zoom", vendor:"腾讯 / Zoom", status:"open",
+ link:"", icon:{t:"腾", c:"#0052D9"}, blurb:"实时音视频 SFU + 弱网对抗"},
+{cat:"office", name:"XMind", vendor:"XMind", status:"open",
+ link:"", icon:{t:"X", c:"#F58523"}, blurb:"新手友好 · 思维导图语义清晰"},
+{cat:"office", name:"Typora", vendor:"Typora", status:"open",
+ link:"", icon:{t:"T", c:"#4A4A4A"}, blurb:"新手友好 · Markdown 所见即所得"},
+
+/* ============ 社交通讯与协议 ============ */
+{cat:"social", name:"微信", vendor:"腾讯", status:"open", heat:1,
+ link:"", icon:{si:"wechat", c:"#07C160"}, blurb:"呼声最高 · 难度极高：协议封闭，支付/小程序/关系链不可复刻"},
+{cat:"social", name:"Telegram", vendor:"Telegram", status:"open", heat:12,
+ link:"", icon:{si:"telegram", c:"#26A8E4"}, blurb:"客户端官方已开源，服务端与 Bot 生态可复刻"},
+{cat:"social", name:"Discord", vendor:"Discord", status:"open",
+ link:"", icon:{si:"discord", c:"#5865F2"}, blurb:"实时语音 + 社区功能"},
+{cat:"social", name:"WhatsApp", vendor:"Meta", status:"open",
+ link:"", icon:{t:"W", c:"#25D366"}, blurb:"端到端加密协议 + 全球网络效应"},
+{cat:"social", name:"QQ", vendor:"腾讯", status:"open",
+ link:"", icon:{t:"Q", c:"#12B7F5"}, blurb:"经典 IM 语义，协议为深水区"},
+{cat:"social", name:"钉钉", vendor:"阿里", status:"open",
+ link:"", icon:{t:"钉", c:"#2E7CF6"}, blurb:"组织架构 + 审批流是核心"},
+{cat:"social", name:"Instagram", vendor:"Meta", status:"open",
+ link:"", icon:{si:"instagram", c:"#E1306C"}, blurb:"图片社交 + 推荐流"},
+
+/* ============ 手机 App ============ */
+{cat:"app", name:"小红书", vendor:"小红书", status:"open", heat:10,
+ link:"", icon:{si:"xiaohongshu", c:"#FF2442"}, blurb:"种草社区氛围 + 推荐流"},
+{cat:"app", name:"淘宝", vendor:"阿里", status:"open",
+ link:"", icon:{t:"淘", c:"#FF6A00"}, blurb:"电商交易链路语义清晰"},
+{cat:"app", name:"拼多多", vendor:"拼多多", status:"open",
+ link:"", icon:{t:"拼", c:"#E02E24"}, blurb:"拼团 + 砍价玩法可复刻"},
+{cat:"app", name:"美团", vendor:"美团", status:"open",
+ link:"", icon:{t:"美", c:"#F5A300"}, blurb:"本地生活交易 + 配送调度"},
+{cat:"app", name:"支付宝", vendor:"蚂蚁集团", status:"open",
+ link:"", icon:{t:"支", c:"#1677FF"}, blurb:"支付链路语义清晰，资金安全是红线"},
+{cat:"app", name:"高德地图", vendor:"阿里", status:"open",
+ link:"", icon:{t:"德", c:"#00B5B8"}, blurb:"地图渲染 + 路径规划"},
+
+/* ============ 桌面软件 ============ */
+{cat:"desktop", name:"Google Chrome", vendor:"Google", status:"done", heat:6,
+ link:"https://github.com/chromium/chromium", linkNote:"Chromium · 官方开源上游",
+ icon:{si:"googlechrome", c:"#4285F4"}, blurb:"浏览器内核工程量巨大，但上游已开源"},
+{cat:"desktop", name:"Matlab", vendor:"MathWorks", status:"open",
+ link:"", icon:{t:"M", c:"#E16737"}, blurb:"难度标注：数值计算生态极深，Octave 可参考"},
+{cat:"desktop", name:"Everything", vendor:"voidtools", status:"open",
+ link:"", icon:{t:"E", c:"#43A047"}, blurb:"新手友好 · NTFS 索引语义清晰"},
+{cat:"desktop", name:"Snipaste", vendor:"Snipaste", status:"open",
+ link:"", icon:{t:"S", c:"#1E88E5"}, blurb:"新手友好 · 截图贴图语义简单"},
+{cat:"desktop", name:"搜狗输入法", vendor:"搜狗", status:"open",
+ link:"", icon:{t:"搜", c:"#FF6B00"}, blurb:"词库/语言模型 + 输入法框架"},
+{cat:"desktop", name:"向日葵 / TeamViewer", vendor:"贝锐 / TeamViewer", status:"done",
+ link:"https://github.com/rustdesk/rustdesk", linkNote:"RustDesk · 125.5k stars · AGPL-3.0",
+ icon:{t:"R", c:"#1565C0"}, blurb:"NAT 穿透 + 远程桌面，RustDesk 已证明"},
+
+/* ============ 开发工具 ============ */
+{cat:"dev", name:"VS Code", vendor:"微软", status:"done", heat:7,
+ link:"https://github.com/microsoft/vscode", linkNote:"官方开源 · MIT",
+ icon:{si:"visualstudiocode", c:"#007ACC"}, blurb:"编辑器 + 插件生态已被验证"},
+{cat:"dev", name:"Navicat", vendor:"PremiumSoft", status:"open",
+ link:"", icon:{t:"N", c:"#7B61FF"}, blurb:"数据库协议公开，UI 工作量大"},
+{cat:"dev", name:"JetBrains 全家桶", vendor:"JetBrains", status:"open",
+ link:"", icon:{t:"J", c:"#000000"}, blurb:"语言智能（索引/重构）是深水区"},
+{cat:"dev", name:"Postman", vendor:"Postman", status:"open",
+ link:"", icon:{t:"P", c:"#FF6C37"}, blurb:"API 调试语义清晰"},
+{cat:"dev", name:"GitHub Desktop", vendor:"GitHub", status:"open",
+ link:"", icon:{t:"G", c:"#24292F"}, blurb:"Git 可视化语义清晰"},
+{cat:"dev", name:"Docker Desktop", vendor:"Docker", status:"open",
+ link:"", icon:{t:"D", c:"#2496ED"}, blurb:"容器管理面板语义清晰"},
+];
+
+const CATS = [
+ {id:"av",      name:"影音直播",     color:"#FF6B6B", desc:"剪辑 / 短视频 / 直播，创作者刚需"},
+ {id:"design",  name:"设计创意",     color:"#F15BB5", desc:"修图 / 矢量 / 排版 / 建模"},
+ {id:"office",  name:"办公效率",     color:"#FFB26B", desc:"文档 / 笔记 / 会议 / 协同"},
+ {id:"social",  name:"社交通讯与协议", color:"#4D96FF", desc:"IM / 社区 / 协议，呼声最高难度最大"},
+ {id:"app",     name:"手机 App",      color:"#9B5DE5", desc:"电商 / 生活服务 / 内容社区"},
+ {id:"desktop", name:"桌面软件",     color:"#4ECDC4", desc:"浏览器 / 工具 / 科学计算"},
+ {id:"dev",     name:"开发工具",     color:"#2EC4B6", desc:"编辑器 / 数据库 / API 调试"},
+];
+
+const STATUS_LABEL = {done:"已有复现", active:"进行中", open:"待认领"};

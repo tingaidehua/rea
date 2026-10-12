@@ -1,7 +1,17 @@
-# REA 复刻工场 · 构建报告（v2 目录导航站）
+# REA 复刻工场 · 构建报告（v3 白色可爱风目录导航站）
 
 > 构建日期：2026-10-12 ｜ 纯静态站（HTML + CSS + JS，无框架、无构建步骤）
-> v2 在 v1 单页基础上升级为**目录导航站**：48 目标 × 8 分类，搜索 + 分类 + 状态三维过滤。
+> v3 按用户反馈大改版：v2 暗色科技风被批"太暗太土"→白色圆润可爱风；Hero 中央放知名软件图标墙；页面结构固定为 Hero→热门→分类→协作→趋势→Footer；数据层独立为 `targets.js`。
+
+## v3 改了什么（相对 v2）
+
+1. **风格**：白色底（#FFF9F4）+ 大圆角卡片（26px）+ pastel 点缀 + 柔和阴影；字大、留白足；"可爱但不幼稚"
+2. **Hero 图标墙**：12 个热门目标的品牌图标（simple-icons CDN，17 个 slug 逐个 curl 验 200；CDN 没有的用品牌色字母 tile 兜底，img onerror 自动降级）
+3. **页面结构**：①Hero（一句话+图标墙+搜索）②热门目标（TOP 12 按热度排序，带名次徽章）③分类目录（7 大类：影音直播/设计创意/办公效率/社交通讯与协议/手机 App/桌面软件/开发工具）④运营协作区（提交→认领→组队→交付四步 + REA 工具卡 + 去中心化说明）⑤市场趋势（REA 114k stars / ArtCraft 79k / 19 已有复现 / 30 待认领）⑥Footer
+4. **数据层**：`targets.js` 独立文件（TARGETS 数组 + CATS + 状态标签），加目标只改它；`app.js` 只负责渲染
+5. **目标**：50 个 blockbuster 级；19 个"已有复现"链接全部沿用 v2 已核实 200 的真链（pdfcraft 纠正保留）；30 个待认领零外链
+6. **SEO/法律**：meta/OG/JSON-LD/canonical（指向实际线上地址）/sitemap/robots 全套保留；三红线显眼；页脚下架通道 + 不构成法律意见
+7. **域名备注**：`tingai.is-a.dev` DNS 已生效（302），但仓库 Pages 未配自定义域名（本次不碰部署配置）；canonical/sitemap 指向实际可访问的 `https://tingaidehua.github.io/tingai/`
 
 ## 文件清单
 
@@ -17,7 +27,22 @@
 
 总计约 73KB（页面三件套），零依赖，打开即用。
 
-## v2 改了哪些文件
+## v3 文件清单（当前）
+
+| 文件 | 说明 | 大小 |
+|------|------|------|
+| `index.html` | v3 骨架：nav / Hero（图标墙+搜索）/ 三红线 / 热门 / 分类 / 协作 / 趋势 / FAQ / 页脚；SEO（meta/OG/canonical/JSON-LD） | ~10KB |
+| `styles.css` | 白色可爱风：暖白底、大圆角卡片、pastel 点缀、品牌色 tile；响应式 900px/640px | ~11KB |
+| `targets.js` | **独立数据层**：50 目标 + 7 分类 + 状态标签；加目标只改它 | ~11KB |
+| `app.js` | 渲染：图标墙 / 热门 TOP12 / 分类区 / 搜索过滤（`?q=`）/ tile 兜底 | ~4KB |
+| `sitemap.xml` / `robots.txt` | SEO；canonical 指向实际线上地址 | — |
+| `TARGETS.md` | 调研记录（v2 原文保留，顶部加 v3 结构说明） | — |
+| `BUILD_REPORT.md` | 本文件 | — |
+| `DEPLOY_REPORT.md` | 部署记录（v2 部署时生成，本次未动部署配置） | — |
+
+目标卡片总数：**50 张**（影音直播 8 / 设计创意 9 / 办公效率 8 / 社交通讯与协议 7 / 手机 App 6 / 桌面软件 6 / 开发工具 6）；状态：已有复现 19（绿）/ 进行中 1（黄）/ 待认领 30（灰）；19 个复现链接全部沿用 v2 已核实 200 的真链，待认领零外链。
+
+## v2 改了哪些文件（历史记录）
 
 - **`index.html`（重写核心区）**
   - SEO 全套：中文 title / meta description / keywords、Open Graph、twitter card、canonical、JSON-LD（WebSite + ItemList，25 个已核实开源复现逐条列出 name+url）。
