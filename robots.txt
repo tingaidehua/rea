@@ -1,0 +1,6 @@
+# REA 复刻工场 · robots.txt
+# 域名为计划中的 tingai.is-a.dev，确定后全站替换。
+User-agent: *
+Allow: /
+
+Sitemap: https://tingai.is-a.dev/sitemap.xml
